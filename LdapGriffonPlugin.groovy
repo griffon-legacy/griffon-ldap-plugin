@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2012 the original author or authors.
+ * Copyright 2009-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@
  */
 class LdapGriffonPlugin {
     // the plugin version
-    String version = '0.2'
+    String version = '1.0.0'
     // the version or versions of Griffon the plugin is designed for
-    String griffonVersion = '0.9.5 > *'
+    String griffonVersion = '1.3.0 > *'
     // the other plugins this plugin depends on
-    Map dependsOn = [spring: '0.9']
+    Map dependsOn = [spring: '1.2.0']
     // resources that are included in plugin packaging
     List pluginIncludes = []
     // the plugin license
@@ -49,21 +49,24 @@ class LdapGriffonPlugin {
     String title = 'LDAP client'
     // accepts Markdown syntax. See http://daringfireball.net/projects/markdown/ for details
     String description = '''
-The Griffon LDAP Plugin uses the [Gldapo][1] library to provide an easy to use, object oriented, interface to LDAP enabled directories.
-A direct port of the [LDAP plugin for Grails][2]. Original plugin made by Luke Daley.
+The Griffon LDAP Plugin uses the [Gldapo][1] library to provide an easy to use,
+object oriented, interface to LDAP enabled directories. A direct port of the
+[LDAP plugin for Grails][2]. Original plugin made by Luke Daley.
 
 Usage
 -----
 
-The [Gldapo site][3] contains the current documentation for Gldapo. Please refer to that, but beware that initialization/config
-is a little different in the Griffon context.
+The [Gldapo site][3] contains the current documentation for Gldapo. Please refer
+to that, but beware that initialization/config is a little different in the
+Griffon context.
 
 Configuration
 -------------
 
-To configure gldapo for use with your Griffon app, you follow the same regular [config script initialization][4] process, except
-that you put the config under the key ldap in your Griffon application config. The most common way to do this is to use the 
-`griffon-app/conf/Config.groovy` file.
+To configure gldapo for use with your Griffon app, you follow the same regular
+[config script initialization][4] process, except that you put the config under
+the key ldap in your Griffon application config. The most common way to do this
+is to use the `griffon-app/conf/Config.groovy` file.
 
         ldap {
             directories {
@@ -85,15 +88,16 @@ that you put the config under the key ldap in your Griffon application config. T
              }
         }
 
-### Schema Classes
+### Schema Classes
 
-This plugin adds the `griffon-app/ldap` directory to your project. You should put your schema classes in this directory to have
-them found by the plugin and automatically registered into your config.
+This plugin adds the `griffon-app/ldap` directory to your project. You should
+put your schema classes in this directory to have them found by the plugin and
+automatically registered into your config.
 
-### The ‘gldapo’ bean
+### The ‘gldapo’ bean
 
-This plugin also adds a bean called `gldapo` to your application context. This bean is the instance of `gldapo.Gldapo` created
-from the config.
+This plugin also adds a bean called `gldapo` to your application context. This
+bean is the instance of `gldapo.Gldapo` created from the config.
 
 Scripts
 -------
